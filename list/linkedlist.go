@@ -38,7 +38,7 @@ func (l *List[T]) Remove(item *List[T]) (*List[T], error) {
 		}
 	}
 
-	return nil, errors.New("Item not found")
+	return nil, errors.New("item not found")
 }
 
 func (l *List[T]) RemoveByIndex(i int) (*List[T], error) {
@@ -62,7 +62,7 @@ func (l *List[T]) RemoveByIndex(i int) (*List[T], error) {
 		}
 	}
 
-	return nil, errors.New("Item not found")
+	return nil, errors.New("item not found")
 }
 
 func (l *List[T]) Add(newValue List[T], index int) {
@@ -84,7 +84,8 @@ func (l *List[T]) ConvertToSlice() []T {
 	i := 0
 
 	for curr := l; curr != nil; curr = curr.Next {
-		slice[i] = curr.Val
+		slice = append(slice, curr.Val)
+		i++
 	}
 
 	return slice

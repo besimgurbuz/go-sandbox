@@ -32,20 +32,20 @@ func main() {
 		fmt.Printf("%v: %v\n", name, ip)
 	}
 	myLinkedList := &list.List[string]{
-		&list.List[string]{
-			&list.List[string]{
-				&list.List[string]{
-					&list.List[string]{
-						nil,
-						"fifth item",
+		Next: &list.List[string]{
+			Next: &list.List[string]{
+				Next: &list.List[string]{
+					Next: &list.List[string]{
+						Next: nil,
+						Val:  "fifth item",
 					},
-					"fourth item",
+					Val: "fourth item",
 				},
-				"thirth item",
+				Val: "thirth item",
 			},
-			"second item",
+			Val: "second item",
 		},
-		"first item",
+		Val: "first item",
 	}
 
 	myLinkedList.Print()
@@ -71,11 +71,14 @@ func main() {
 	fmt.Println("Adding!")
 
 	myLinkedList.Add(list.List[string]{
-		nil,
-		"ayo ayo ayo this is new item",
+		Next: nil,
+		Val:  "ayo ayo ayo this is new item",
 	}, 0)
 
 	myLinkedList.Print()
 
-	fmt.Println(myLinkedList.ConvertToSlice())
+	// Convert to list
+	for i, item := range myLinkedList.ConvertToSlice() {
+		fmt.Printf("Index: %d Val: %v\n", i, item)
+	}
 }
