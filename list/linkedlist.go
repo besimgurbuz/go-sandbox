@@ -6,6 +6,7 @@ import (
 	"errors"
 )
 
+// A type to create a linked list
 type List[T any] struct {
 	Next *List[T]
 	Val  T

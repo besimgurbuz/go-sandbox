@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"besimgurbuz.com/concurrency"
+	"besimgurbuz.com/patterns"
 )
 
 type IPAddr [4]byte
@@ -94,5 +94,20 @@ func main() {
 
 	// concurrency.DefaultSelectMain()
 
-	concurrency.ConcurrencyExercise()
+	// concurrency.ConcurrencyExercise()
+
+	// concurrency.MutexMain()
+
+	// concurrency.WebCrawlerMain()
+
+	// patterns.ConcurrencyPatternMain1()
+	// patterns.ConcurrencyPatternMain2()
+
+	// patterns.Timeout()
+
+	// patterns.SingleTimeout()
+
+	// patterns.FakeGoogleMainReplicatedExample()
+
+	patterns.FakeGoogleReplicaMain()
 }
